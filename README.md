@@ -2,6 +2,7 @@ Vue + Express boilerplate for development  Version Konata9
 =========================================
 
 在原版本基础之上，修改了webpack的相关配置文件。使得项目可以运行build命令，编译vue相关代码。
+
 fork源：[southerncross/vue-express-dev-boilerplate](https://github.com/southerncross/vue-express-dev-boilerplate)
 
 ## 关键词
@@ -60,7 +61,9 @@ fork源：[southerncross/vue-express-dev-boilerplate](https://github.com/souther
    `npm run dev`
 
 3. build前端代码
+
     `npm run build`
+    
     生成后的代码会在根目录的dist目录下。
     此时可专门写一个生产环境启动express的脚本。
 
