@@ -1,7 +1,10 @@
-Vue + Express boilerplate for development
+Vue + Express boilerplate for development  Version Konata9
 =========================================
 
-## Keywords
+在原版本基础之上，修改了webpack的相关配置文件。使得项目可以运行build命令，编译vue相关代码。
+fork源：[southerncross/vue-express-dev-boilerplate](https://github.com/southerncross/vue-express-dev-boilerplate)
+
+## 关键词
 
 - Vue
 - Express
@@ -10,13 +13,12 @@ Vue + Express boilerplate for development
 - Npm
 
 
-## Structure
+## 文件目录
 
 ```
 .
 ├── LICENSE
 ├── README.md
-├── index.js
 ├── nodemon.json
 ├── package.json
 ├── src
@@ -24,29 +26,45 @@ Vue + Express boilerplate for development
 │   │   ├── App.vue
 │   │   ├── components
 │   │   │   └── Hello.vue
+│   │   │── static
 │   │   └── index.js
 │   └── server
 │       ├── index.js
 │       ├── public
 │       │   └── favicon.ico
-│       ├── router.js
 │       └── views
-│           ├── error.jade
-│           └── index.jade
+│           ├── index.html
+├── build
+│   ├── build.js
+│   ├── clicheck-version.js
+│   ├── utils.js
+│   ├── vue-loader.conf.js
+│   ├── webpack.base.conf.js
+│   ├── webpack.dev.conf.js
+│   └── webpack.prod.conf.js
+├── config
+│   ├── dev.env.js
+│   ├── index.js
+│   └── prod.env.js
 └── webpack.config.js
 ```
 
-## Usage
+## 用法
 
-1. Install dependencies
+1. 安装依赖包
 
    `npm install`
 
-2. Run the application
+2. 运行开发环境
 
    `npm run dev`
 
-## References
+3. build前端代码
+    `npm run build`
+    生成后的代码会在根目录的dist目录下。
+    此时可专门写一个生产环境启动express的脚本。
+
+## 参考资料
 
 Some ideas are stolen from them, really appreciated.
 
