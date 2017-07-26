@@ -34,7 +34,7 @@ fork源：[southerncross/vue-express-dev-boilerplate](https://github.com/souther
 │       ├── public
 │       │   └── favicon.ico
 │       └── views
-│           ├── index.html
+│             └── index.html
 ├── build
 │   ├── build.js
 │   ├── clicheck-version.js
