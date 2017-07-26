@@ -45,10 +45,9 @@ fork源：[southerncross/vue-express-dev-boilerplate](https://github.com/souther
 │   ├── webpack.dev.conf.js
 │   └── webpack.prod.conf.js
 ├── config
-│   ├── dev.env.js
-│   ├── index.js
-│   └── prod.env.js
-└── webpack.config.js
+     ├── dev.env.js
+     ├── index.js
+     └── prod.env.js
 ```
 
 ## 用法
