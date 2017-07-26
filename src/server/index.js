@@ -8,8 +8,7 @@ import webpack from 'webpack'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
 
-import router from './router'
-import config from '../../webpack.config'
+import config from '../../build/webpack.base.conf'
 
 const app = express()
 
@@ -34,10 +33,13 @@ app.use(webpackDevMiddleware(compiler, {
 
 app.use(webpackHotMiddleware(compiler))
 
-app.use('/', router)
+app.use(express.static(path.join(__dirname, 'views')))
+app.get('/', function (req, res) {
+  res.sendFile('./views/index.html')
+})
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   var err = new Error('Not Found')
   err.status = 404
   next(err)
@@ -45,7 +47,7 @@ app.use(function(req, res, next) {
 
 // error handler
 // will print stacktrace
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   res.status(err.status || 500)
   res.render('error', {
     message: err.message,

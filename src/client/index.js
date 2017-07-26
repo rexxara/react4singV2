@@ -16,7 +16,6 @@ const router = new Router({
 new Vue({
   el: '#app',
   router,
-  render (createElement) {
-    return createElement(App)
-  }
+  template: '<App/>',
+  components: { App }
 })
