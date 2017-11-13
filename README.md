@@ -1,13 +1,17 @@
-Vue + Express boilerplate for development  Version Konata9
+Vue + Express 前后端脚手架（基于iViewUI）
 =========================================
 
 在原版本基础之上，修改了webpack的相关配置文件。使得项目可以运行build命令，编译vue相关代码。
+前端部分增加了vue全家桶（vue-router，vuex）以及iView的关联
+后端express部分增加有history模式
+重新修改了文件夹结构
 
 fork源：[southerncross/vue-express-dev-boilerplate](https://github.com/southerncross/vue-express-dev-boilerplate)
 
 ## 关键词
 
-- Vue
+- Vue (vue-router + vuex)
+- iView
 - Express
 - Nodemon
 - Webpack
@@ -28,9 +32,16 @@ fork源：[southerncross/vue-express-dev-boilerplate](https://github.com/souther
 │   │   ├── components
 │   │   │   └── Hello.vue
 │   │   │── static
+│   │   │── router
+│   │   │── store
+│   │   │── views
 │   │   └── index.js
 │   └── server
 │       ├── index.js
+│       ├── config
+│       ├── dao
+│       ├── model
+│       ├── router
 │       ├── public
 │       │   └── favicon.ico
 │       └── views

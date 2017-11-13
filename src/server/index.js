@@ -5,6 +5,11 @@ import logger from 'morgan'
 import cookieParser from 'cookie-parser'
 import bodyParser from 'body-parser'
 import webpack from 'webpack'
+
+// 引入history模块
+import history from 'connect-history-api-fallback'
+
+// 正式环境时，下面两个模块不需要引入
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
 
@@ -15,6 +20,9 @@ const app = express()
 // view engine setup
 // app.set('views', path.join(__dirname, 'views'))
 // app.set('view engine', 'jade')
+
+// 引入history模式让浏览器支持
+app.use(history())
 
 // uncomment after placing your favicon in /public
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
@@ -49,10 +57,7 @@ app.use(function (req, res, next) {
 // will print stacktrace
 app.use(function (err, req, res, next) {
   res.status(err.status || 500)
-  res.render('error', {
-    message: err.message,
-    error: err
-  })
+  res.send(err.message)
 })
 
 app.listen(4000)
