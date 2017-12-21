@@ -5,7 +5,6 @@ import logger from 'morgan'
 import cookieParser from 'cookie-parser'
 import bodyParser from 'body-parser'
 import webpack from 'webpack'
-
 // 引入history模块
 import history from 'connect-history-api-fallback'
 
@@ -46,6 +45,9 @@ app.get('/', function (req, res) {
   res.sendFile('./views/index.html')
 })
 
+
+var routerLogin = require("./router/login")
+routerLogin(app)
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   var err = new Error('Not Found')
@@ -63,3 +65,4 @@ app.use(function (err, req, res, next) {
 app.listen(4000)
 
 export default app
+

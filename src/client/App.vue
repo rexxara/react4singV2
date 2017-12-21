@@ -1,8 +1,14 @@
 <template>
-  <div class="app full-height">
-    <h1>{{ message }}</h1>
-    <router-link :to="{ name: 'hello' }">Goto Hello</router-link>
-    <router-view></router-view>
+  <div>
+    <router-view class='view'></router-view>
+  <mu-paper style="max-width: 1334px;">
+    <mu-bottom-nav :value="bottomNav" shift @change="handleChange">
+      <mu-bottom-nav-item value="movies" title="Movies" icon="ondemand_video"/>
+      <mu-bottom-nav-item value="music" title="Music" icon="music_note"/>
+      <mu-bottom-nav-item value="books" title="Books" icon="books"/>
+      <mu-bottom-nav-item value="pictures" title="Pictures" icon="photo"/>
+    </mu-bottom-nav>
+  </mu-paper>
   </div>
 </template>
 
@@ -10,7 +16,20 @@
 export default {
   data () {
     return {
-      message: 'Express + Vue boilerplate-Konata9'
+      bottomNav: 'movies',
+      bottomNavColor: 'movies'
+    }
+  },
+  methods: {
+    handleChange (val) {
+      this.bottomNav = val
+      console.log(val)
+      if(val==='movies'){
+        this.$router.push('/')
+      }
+      if(val==='music'){
+        this.$router.push('/login')
+      }
     }
   }
 }
@@ -22,9 +41,10 @@ html {
 }
 
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
+overflow: hidden;
+}
+.view{
+  width: 1334px;
+  height: 611px;
 }
 </style>
